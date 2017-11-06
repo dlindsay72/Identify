@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Optima.ttc">
+            <string>Optima-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--CameraVC-->
         <scene sceneID="tne-QT-ifu">
@@ -17,12 +22,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="81y-qE-xYE">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdW-G4-kJH" customClass="RoundedShadowView" customModule="Identify" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="30" width="335" height="80"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SRL-8X-Jek">
+                                                <rect key="frame" x="8" y="8" width="319" height="64"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The names of items captured will appear here" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="9sy-nO-s3H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="31.5"/>
+                                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="18"/>
+                                                        <color key="textColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CONFIDENCE: " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bvq-T3-xLK">
+                                                        <rect key="frame" x="0.0" y="36.5" width="319" height="27.5"/>
+                                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="14"/>
+                                                        <color key="textColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="SRL-8X-Jek" firstAttribute="top" secondItem="UdW-G4-kJH" secondAttribute="top" constant="8" id="1Ao-kp-vnD"/>
+                                            <constraint firstAttribute="height" constant="80" id="BGu-NE-gUq"/>
+                                            <constraint firstAttribute="bottom" secondItem="SRL-8X-Jek" secondAttribute="bottom" constant="8" id="Cj5-y8-nGB"/>
+                                            <constraint firstAttribute="trailing" secondItem="SRL-8X-Jek" secondAttribute="trailing" constant="8" id="UUG-KN-wFb"/>
+                                            <constraint firstItem="SRL-8X-Jek" firstAttribute="leading" secondItem="UdW-G4-kJH" secondAttribute="leading" constant="8" id="ctN-4E-LUU"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oL7-S8-zGa" customClass="RoundedShadowButton" customModule="Identify" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="617" width="85" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="gF1-iF-t8q"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Optima-Bold" family="Optima" pointSize="15"/>
+                                        <state key="normal" title="FLASH OFF">
+                                            <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="flashOffBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ERP-XU-ugo"/>
+                                        </connections>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rMcAdams" translatesAutoresizingMaskIntoConstraints="NO" id="kOH-Xm-AZV" customClass="RoundedShadowImageView" customModule="Identify" customModuleProvider="target">
+                                        <rect key="frame" x="275" y="519" width="80" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="2hV-Xe-NgA"/>
+                                            <constraint firstAttribute="width" constant="80" id="GTL-D4-kga"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="kOH-Xm-AZV" secondAttribute="trailing" constant="20" id="0gt-p1-hFT"/>
+                                    <constraint firstAttribute="trailing" secondItem="UdW-G4-kJH" secondAttribute="trailing" constant="20" id="1yn-Iq-sQZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="oL7-S8-zGa" secondAttribute="bottom" constant="20" id="3kO-Kb-KjI"/>
+                                    <constraint firstItem="oL7-S8-zGa" firstAttribute="leading" secondItem="81y-qE-xYE" secondAttribute="leading" constant="20" id="PAa-h1-dwe"/>
+                                    <constraint firstAttribute="bottom" secondItem="kOH-Xm-AZV" secondAttribute="bottom" constant="20" id="i1b-HX-PWf"/>
+                                    <constraint firstItem="UdW-G4-kJH" firstAttribute="leading" secondItem="81y-qE-xYE" secondAttribute="leading" constant="20" id="imc-Ja-oVP"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oL7-S8-zGa" secondAttribute="trailing" constant="20" symbolic="YES" id="jjt-Wg-toK"/>
+                                    <constraint firstItem="UdW-G4-kJH" firstAttribute="top" secondItem="81y-qE-xYE" secondAttribute="top" constant="30" id="thI-ZJ-4IP"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="81y-qE-xYE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ITy-WI-nUu"/>
+                            <constraint firstAttribute="trailing" secondItem="81y-qE-xYE" secondAttribute="trailing" id="Oqo-IK-xVG"/>
+                            <constraint firstItem="81y-qE-xYE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="daf-Ee-A5w"/>
+                            <constraint firstAttribute="bottom" secondItem="81y-qE-xYE" secondAttribute="bottom" id="l1U-BG-lhV"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="81y-qE-xYE" id="cUA-LN-BRQ"/>
+                        <outlet property="confidenceLbl" destination="bvq-T3-xLK" id="vP1-CS-4z7"/>
+                        <outlet property="flashOffBtn" destination="oL7-S8-zGa" id="TBf-qA-2jg"/>
+                        <outlet property="itemImageView" destination="kOH-Xm-AZV" id="rot-5E-GRe"/>
+                        <outlet property="itemNameLbl" destination="9sy-nO-s3H" id="4Sp-o0-eLd"/>
+                        <outlet property="roundedShadowView" destination="UdW-G4-kJH" id="aQ4-PG-RYR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-154.40000000000001" y="-571.66416791604206"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rMcAdams" width="236" height="364"/>
+    </resources>
 </document>

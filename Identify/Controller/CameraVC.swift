@@ -9,11 +9,21 @@
 import UIKit
 
 class CameraVC: UIViewController {
-
+    
+    @IBOutlet weak var itemNameLbl: UILabel!
+    @IBOutlet weak var confidenceLbl: UILabel!
+    @IBOutlet weak var itemImageView: RoundedShadowImageView!
+    @IBOutlet weak var flashOffBtn: RoundedShadowButton!
+    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet weak var roundedShadowView: RoundedShadowView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
 
+    @IBAction func flashOffBtnWasPressed(_ sender: Any) {
+        
+    }
 }
 
