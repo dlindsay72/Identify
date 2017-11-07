@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B370DC21FB141BB0020704A /* SqueezeNet.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 7B370DC11FB141BB0020704A /* SqueezeNet.mlmodel */; };
 		7B4F91FA1FB0E125001A8628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F91F91FB0E125001A8628 /* AppDelegate.swift */; };
 		7B4F91FC1FB0E125001A8628 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4F91FB1FB0E125001A8628 /* CameraVC.swift */; };
 		7B4F91FF1FB0E125001A8628 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B4F91FD1FB0E125001A8628 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7B370DC11FB141BB0020704A /* SqueezeNet.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = SqueezeNet.mlmodel; sourceTree = "<group>"; };
 		7B4F91F61FB0E125001A8628 /* Identify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Identify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B4F91F91FB0E125001A8628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B4F91FB1FB0E125001A8628 /* CameraVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 		7B4F920D1FB0E1CC001A8628 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B370DC11FB141BB0020704A /* SqueezeNet.mlmodel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				7B4F91FC1FB0E125001A8628 /* CameraVC.swift in Sources */,
 				7B4F91FA1FB0E125001A8628 /* AppDelegate.swift in Sources */,
 				7B4F92151FB0EB5A001A8628 /* UIView+Ext.swift in Sources */,
+				7B370DC21FB141BB0020704A /* SqueezeNet.mlmodel in Sources */,
 				7B4F920F1FB0E638001A8628 /* RoundedShadowView.swift in Sources */,
 				7B4F92111FB0EA33001A8628 /* RoundedShadowButton.swift in Sources */,
 				7B4F92131FB0EAAD001A8628 /* RoundedShadowImageView.swift in Sources */,
