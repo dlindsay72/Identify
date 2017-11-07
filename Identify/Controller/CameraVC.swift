@@ -11,7 +11,14 @@ import AVFoundation
 import CoreML
 import Vision
 
+enum FlashState {
+    case off
+    case on
+}
+
 class CameraVC: UIViewController {
+    
+    //MARK: - IBOutlets
     
     @IBOutlet weak var itemNameLbl: UILabel!
     @IBOutlet weak var confidenceLbl: UILabel!
@@ -20,13 +27,19 @@ class CameraVC: UIViewController {
     @IBOutlet weak var cameraView: UIView!
     @IBOutlet weak var roundedShadowView: RoundedShadowView!
     
+    //MARK: - Properties
+    
     var captureSession: AVCaptureSession!
     var cameraOutput: AVCapturePhotoOutput!
     var previewLayer: AVCaptureVideoPreviewLayer!
     var photoData: Data?
+    var flashControlState: FlashState = .off
+    
+    //MARK: - Main Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        confidenceLbl.text = ""
         
     }
     
@@ -68,10 +81,18 @@ class CameraVC: UIViewController {
         }
     }
     
+    //MARK: - Custom Methods
+    
     @objc func didTapCameraView() {
         let settings = AVCapturePhotoSettings()
 
         settings.previewPhotoFormat = settings.embeddedThumbnailPhotoFormat
+        
+        if flashControlState == .off {
+            settings.flashMode = .off
+        } else {
+            settings.flashMode = .on
+        }
         cameraOutput.capturePhoto(with: settings, delegate: self)
         
     }
@@ -92,11 +113,22 @@ class CameraVC: UIViewController {
         }
         
     }
+    
+    //MARK: - IBActions
 
     @IBAction func flashOffBtnWasPressed(_ sender: Any) {
-        
+        switch flashControlState {
+        case .off:
+            flashOffBtn.setTitle("FLASH ON", for: .normal)
+            flashControlState = .on
+        case .on:
+            flashOffBtn.setTitle("FLASH OFF", for: .normal)
+            flashControlState = .off
+        }
     }
 }
+
+//MARK: - AVCapturePhotoCaptureDelegate
 
 extension CameraVC: AVCapturePhotoCaptureDelegate {
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
